@@ -1,0 +1,19 @@
+{
+  "name": "keystone_starter",
+  "version": "1.0.0",
+  "description": "Starter for Keystone.js (Node, Mongodb), SASS and webpack based web site.",
+  "main": "keystone.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bouncingAlien/keystone_starter.git"
+  },
+  "author": "Dejan Lukic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bouncingAlien/keystone_starter/issues"
+  },
+  "homepage": "https://github.com/bouncingAlien/keystone_starter#readme"
+}
