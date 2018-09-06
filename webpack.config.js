@@ -1,5 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const autoprefixer = require('autoprefixer');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const javascript = {
     test: /\.(js)$/,
@@ -9,6 +12,24 @@ const javascript = {
             presets: ['@babel/env']
         }
     }
+}
+
+const postcss = {
+    loader: 'postcss-loader',
+    options: {
+        plugins() { return [ autoprefixer({ browsers: 'last 5 versions' }) ]; }
+    }
+}
+
+const styles = {
+    test: /\.scss$/,
+    use: [
+        'style-loader',
+        MiniCssExtractPlugin.loader,
+        'css-loader',
+        postcss,
+        'sass-loader'
+    ]
 }
 
 const config = {
@@ -24,9 +45,21 @@ const config = {
     },
     module: {
         rules: [
-            javascript
+            javascript,
+            styles
         ]
-    }
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: 'style.bundle.css'
+        }),
+        new OptimizeCssAssetsPlugin({
+            assetNameRegExp: /\.css$/g,
+            cssProcessor: require('cssnano'),
+            cssProcessorOptions: { preset: 'default', discardComments: { removeAll: true } },
+            canPrint: true
+        })
+    ]
 }
 
 module.exports = config;

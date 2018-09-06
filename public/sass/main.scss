@@ -1,0 +1,16 @@
+@import "utils/variables";
+@import "utils/mixins";
+// BASE
+@import "base/reset";
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+// LAYOUT
+@import "layout/grid_variables";
+@import "layout/grid_preprocessing";
+@import "layout/grid_mixins";
+@import "layout/grid_classes";
+@import "layout/header";
+@import "layout/footer";
+// PAGES
+@import "pages/index";

@@ -1,3 +1,1 @@
-import test from './modules/test';
-
-test('it works');
+import '../sass/main.scss';
