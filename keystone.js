@@ -7,8 +7,8 @@ keystone.init({
     'brand': 'my-project',
     'static': './public',
     'favicon': './public/icon.png',
+    'view engine': 'pug',
     'views': './templates/views',
-    'view-engine': 'pug',
     'emails': './templates/emails',
     'auto update': true,
     'session': true,
@@ -21,6 +21,7 @@ keystone.init({
 // import models 
 keystone.import('models');
 
-
+// import routes
+keystone.set('routes', require('./routes'));
 
 keystone.start();

@@ -1,0 +1,31 @@
+doctype html
+html
+
+    //- HTML HEADER
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        //- To prevent Mobile Safari from automatically detecting phone numbers
+        meta(name="format-detection" content="telephone=no")
+
+        //- add color to mobile address bar
+        //- meta(name="theme-color" content="")
+
+        //- SEO
+        meta(name="robots" content="index, follow")
+        meta(name="googlebot" content="follow")
+
+        title= title || 'My Project'
+        link(rel="shortcut icon", href="/favicon.png", type="image/x-icon")
+
+        //- Customise the stylesheet for your site by editing /public/styles/site.sass
+        link(href="/dist/style.bundle.css", rel="stylesheet")
+
+        //- This file provides the default styling for the KeystoneJS Content Editor
+        if user && user.canAccessKeystone
+            link(href="/keystone/styles/content/editor.min.css", rel="stylesheet")
+        block head
+    block content
+
+block scripts
+    script(src="/dist/main.bundle.js")
