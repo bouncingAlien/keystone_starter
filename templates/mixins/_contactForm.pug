@@ -1,0 +1,13 @@
+mixin contactForm()
+    form(action="/api/contact" method="POST" class="contact-form")
+        .form-group
+            input.contact-form__input(type="text" name="name" placeholder="Name")
+            label.contact-form__label(for="name") Name
+        .form-group
+            input.contact-form__input(type="email" name="email" placeholder="Email")
+            label.contact-form__label(for="email") Email
+        .form-group
+            textarea.contact-form__textarea(id="message" rows="5" name="message" placeholder="Message")
+            label.contact-form__label(for="message") Message
+        .form-group
+            input.contact-form__button(type="submit" value="Send")
