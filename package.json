@@ -4,7 +4,8 @@
   "description": "Starter for Keystone.js (Node, Mongodb), SASS and webpack based web site.",
   "main": "keystone.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "wp:dev": "webpack --mode=development"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,21 @@
   "bugs": {
     "url": "https://github.com/bouncingAlien/keystone_starter/issues"
   },
-  "homepage": "https://github.com/bouncingAlien/keystone_starter#readme"
+  "homepage": "https://github.com/bouncingAlien/keystone_starter#readme",
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-loader": "^8.0.0",
+    "babel-upgrade": "0.0.23",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0"
+  },
+  "dependencies": {
+    "async": "^2.6.1",
+    "connect-mongo": "^2.0.1",
+    "dotenv": "^6.0.0",
+    "helmet": "^3.13.0",
+    "keystone": "^4.0.0",
+    "pug": "^2.0.3"
+  }
 }
