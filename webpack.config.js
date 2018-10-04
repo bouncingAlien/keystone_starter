@@ -14,6 +14,16 @@ const javascript = {
     }
 }
 
+const images = {
+    test: /\.(jpg|jpeg|png|gif)$/,
+    use: {
+        loader: 'file-loader',
+        options: {
+            outputPath: '../images/'
+        }
+    }
+}
+
 const postcss = {
     loader: 'postcss-loader',
     options: {
@@ -46,6 +56,7 @@ const config = {
     module: {
         rules: [
             javascript,
+            images,
             styles
         ]
     },
